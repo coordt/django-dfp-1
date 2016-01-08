@@ -9,7 +9,7 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def dfp_footer(context):
-    t = template.loader.get_template('dfp/dfp_footer.html')
+    t = template.loader.select_template(['dfp/dfp_footer.html', 'basic/dfp/dfp_footer.html'])
     c = template.Context({})
     return t.render(c)
 
